@@ -1,0 +1,79 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+
+[project]
+name = "bylickilabs-python-reverse-engineering-inspector"
+version = "1.0.0"
+description = "Desktop application for static inspection and analysis of Python projects."
+readme = "README.md"
+requires-python = ">=3.10"
+dynamic = ["dependencies"]
+
+authors = [
+    { name = "Thorsten Bylicki / BylickiLabs" }
+]
+
+keywords = [
+    "python",
+    "pyside6",
+    "reverse-engineering",
+    "static-analysis",
+    "code-analysis",
+    "source-code-analysis",
+    "python-analysis",
+    "ast",
+    "abstract-syntax-tree",
+    "bytecode",
+    "disassembly",
+    "software-analysis",
+    "dependency-analysis",
+    "complexity-analysis",
+    "security-analysis",
+    "developer-tools",
+    "desktop-application",
+    "numpy",
+    "scipy",
+    "sqlite"
+]
+
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Win32 (MS Windows)",
+    "Environment :: X11 Applications :: Qt",
+    "Intended Audience :: Developers",
+    "Operating System :: Microsoft :: Windows",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development",
+    "Topic :: Software Development :: Debuggers",
+    "Topic :: Software Development :: Disassemblers",
+    "Topic :: Software Development :: Quality Assurance"
+]
+
+
+[project.urls]
+Homepage = "https://github.com/bylickilabs/BylickiLabs_Python_Reverse_Engineering_Inspector"
+Repository = "https://github.com/bylickilabs/BylickiLabs_Python_Reverse_Engineering_Inspector"
+Issues = "https://github.com/bylickilabs/BylickiLabs_Python_Reverse_Engineering_Inspector/issues"
+
+
+[project.gui-scripts]
+bprei = "src.ui.main_window:run"
+
+
+[tool.setuptools]
+include-package-data = true
+
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src", "src.*"]
+
+
+[tool.setuptools.dynamic]
+dependencies = { file = ["requirements.txt"] }
