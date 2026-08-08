@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="de" data-bs-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="BylickiLabs Python Reverse Engineering Inspector, BPREI. Statische Python Codeanalyse, Projektstruktur, Komplexitätsmetriken und technische Codeinspektion.">
+  <meta name="theme-color" content="#050914">
+  <title>BylickiLabs Python Reverse Engineering Inspector</title>
+
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+  <a class="skip-link" href="#main" data-de="Zum Inhalt springen" data-en="Skip to content">Zum Inhalt springen</a>
+
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top glass-nav" aria-label="Hauptnavigation">
+    <div class="container-xl">
+      <a class="navbar-brand d-flex align-items-center gap-2 text-white" href="#home">
+        <span class="brand-icon"><i class="bi bi-filetype-py"></i></span>
+        <span>
+          <strong>BylickiLabs</strong>
+          <small>Python Reverse Engineering Inspector</small>
+        </span>
+      </a>
+
+      <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navigation" aria-controls="navigation" aria-expanded="false"
+              aria-label="Navigation öffnen">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navigation">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="#overview" data-de="Übersicht" data-en="Overview">Übersicht</a></li>
+          <li class="nav-item"><a class="nav-link" href="#analysis" data-de="Analyse" data-en="Analysis">Analyse</a></li>
+          <li class="nav-item"><a class="nav-link" href="#architecture" data-de="Architektur" data-en="Architecture">Architektur</a></li>
+          <li class="nav-item"><a class="nav-link" href="#technology" data-de="Technologie" data-en="Technology">Technologie</a></li>
+          <li class="nav-item"><a class="nav-link" href="#download" data-de="Download" data-en="Download">Download</a></li>
+        </ul>
+
+        <div class="language-switch ms-lg-3 mt-3 mt-lg-0" role="group" aria-label="Sprachauswahl">
+          <button type="button" class="active" data-language="de" aria-pressed="true">DE</button>
+          <button type="button" data-language="en" aria-pressed="false">EN</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <aside class="social-rail" aria-label="Social Media">
+    <a class="social-button github" href="https://github.com/bylickilabs" target="_blank" rel="noopener noreferrer"
+       aria-label="GitHub" data-bs-toggle="tooltip" data-bs-placement="left" title="GitHub"><i class="bi bi-github"></i></a>
+    <a class="social-button linkedin" href="https://www.linkedin.com/in/bylicki/" target="_blank" rel="noopener noreferrer"
+       aria-label="LinkedIn" data-bs-toggle="tooltip" data-bs-placement="left" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+    <a class="social-button facebook" href="https://www.facebook.com/BylickiLabs" target="_blank" rel="noopener noreferrer"
+       aria-label="Facebook" data-bs-toggle="tooltip" data-bs-placement="left" title="Facebook"><i class="bi bi-facebook"></i></a>
+  </aside>
+
+  <main id="main">
+    <section id="home" class="hero">
+      <div class="hero-art" aria-hidden="true"></div>
+      <div class="container-xl position-relative">
+        <div class="row align-items-center g-5 min-vh-100 py-5">
+          <div class="col-lg-6">
+            <div class="reveal">
+              <div class="eyebrow">
+                <span class="status-dot"></span>
+                <span data-de="Version 1.0.0 · Python Desktop Anwendung"
+                      data-en="Version 1.0.0 · Python Desktop Application">Version 1.0.0 · Python Desktop Anwendung</span>
+              </div>
+
+              <h5 class="hero-title">
+                <span class="app-name">BylickiLabs Python</span>
+                <span class="gradient-text">Reverse Engineering Inspector</span>
+              </h5>
+
+              <div class="hero-short">BPREI</div>
+
+              <p class="hero-lead"
+                 data-de="Zweisprachige Desktop Anwendung zur statischen strukturellen Untersuchung vollständiger Python Projekte."
+                 data-en="Bilingual desktop application for static structural inspection of complete Python projects.">
+                Zweisprachige Desktop Anwendung zur statischen strukturellen Untersuchung vollständiger Python Projekte.
+              </p>
+
+              <div class="badges-row mt-4">
+                <span><i class="bi bi-filetype-py"></i> Python 3.10+</span>
+                <span><i class="bi bi-window"></i> PySide6</span>
+                <span><i class="bi bi-translate"></i> DE / EN</span>
+                <span><i class="bi bi-diagram-3"></i> Static Analysis</span>
+              </div>
+
+              <div class="d-flex flex-column flex-sm-row gap-3 mt-4">
+                <a class="btn btn-primary btn-lg project-btn" href="https://github.com/bylickilabs/BylickiLabs_Python_Reverse_Engineering_Inspector/archive/refs/heads/main.zip" download>
+                  <i class="bi bi-download me-2"></i>
+                  <span data-de="Quellcode Paket herunterladen" data-en="Download source package">Quellcode Paket herunterladen</span>
+                </a>
+                <a class="btn btn-outline-light btn-lg project-btn" href="https://github.com/bylickilabs" target="_blank" rel="noopener noreferrer">
+                  <i class="bi bi-github me-2"></i>
+                  <span data-de="GitHub" data-en="GitHub">GitHub</span>
+                </a>
+              </div>
+
+              <p class="artifact-note mt-3 mb-0">
+                <i class="bi bi-shield-check me-1"></i>
+                <span data-de="Das Downloadpaket enthält den aktuellen Python Quellcode sowie die Windows Start und Build Skripte."
+                      data-en="The download package contains the current Python source code and the Windows start and build scripts.">
+                  Das Downloadpaket enthält den aktuellen Python Quellcode sowie die Windows Start und Build Skripte.
+                </span>
+              </p>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="preview-shell reveal delay-1" id="previewShell">
+              <div class="preview-window">
+                <div class="preview-toolbar">
+                  <span></span><span></span><span></span>
+                  <small>BPREI · Project Dashboard</small>
+                </div>
+                <img src="assets/project-preview.svg" alt="BPREI Benutzeroberfläche">
+              </div>
+              <div class="floating-chip chip-a"><i class="bi bi-braces"></i><span data-de="AST Struktur" data-en="AST Structure">AST Struktur</span></div>
+              <div class="floating-chip chip-b"><i class="bi bi-activity"></i><span data-de="Statistische Analyse" data-en="Statistical Analysis">Statistische Analyse</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="overview" class="section-padding">
+      <div class="container-xl">
+        <div class="section-heading reveal">
+          <span class="section-kicker" data-de="Projektübersicht" data-en="Project Overview">Projektübersicht</span>
+          <h4 data-de="Python Projekte strukturell verstehen und nachvollziehbar untersuchen"
+              data-en="Understand Python projects structurally and inspect them transparently">
+            Python Projekte strukturell verstehen und nachvollziehbar untersuchen
+          </h4>
+          <p data-de="BPREI verbindet Projektstruktur, Quellcodeinspektion, statistische Auswertung und technische Befunde in einer gemeinsamen Desktop Oberfläche. Das Zielprojekt wird dabei nicht importiert oder ausgeführt."
+             data-en="BPREI combines project structure, source inspection, statistical evaluation, and technical findings in one desktop interface. The target project is neither imported nor executed.">
+          </p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-12 reveal">
+            <article class="wide-card">
+              <div class="card-icon"><i class="bi bi-diagram-3"></i></div>
+              <div class="wide-content">
+                <div>
+                  <span class="label">Project Explorer</span>
+                  <h4 data-de="Projektstruktur und Symbole in einer Ansicht"
+                      data-en="Project structure and symbols in one view">Projektstruktur und Symbole in einer Ansicht</h4>
+                  <p data-de="Python Dateien, Klassen, Funktionen, Methoden, Parameter, Decorators und Codepositionen werden strukturiert erfasst und direkt mit dem Quellcode verbunden."
+                     data-en="Python files, classes, functions, methods, parameters, decorators, and code positions are captured structurally and linked directly to the source code."></p>
+                </div>
+                <div class="tag-row"><span>Files</span><span>Classes</span><span>Symbols</span></div>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-12 reveal">
+            <article class="wide-card">
+              <div class="card-icon"><i class="bi bi-graph-up"></i></div>
+              <div class="wide-content">
+                <div>
+                  <span class="label">Code Metrics</span>
+                  <h3 data-de="Komplexität und Auffälligkeiten statistisch sichtbar machen"
+                      data-en="Make complexity and anomalies statistically visible">Komplexität und Auffälligkeiten statistisch sichtbar machen</h3>
+                  <p data-de="NumPy berechnet Projektmetriken. SciPy ergänzt die Auswertung durch Z Score basierte Erkennung ungewöhnlicher Komplexitätswerte."
+                     data-en="NumPy calculates project metrics. SciPy extends the evaluation with Z Score based detection of unusual complexity values."></p>
+                </div>
+                <div class="tag-row"><span>NumPy</span><span>SciPy</span><span>Z Score</span></div>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-12 reveal">
+            <article class="wide-card">
+              <div class="card-icon"><i class="bi bi-file-earmark-arrow-down"></i></div>
+              <div class="wide-content">
+                <div>
+                  <span class="label">Reporting</span>
+                  <h3 data-de="Analyseergebnisse lokal speichern und exportieren"
+                      data-en="Store and export analysis results locally">Analyseergebnisse lokal speichern und exportieren</h3>
+                  <p data-de="SQLite speichert Analyseverläufe. Ergebnisse können zusätzlich als JSON, CSV, HTML oder Markdown ausgegeben werden."
+                     data-en="SQLite stores analysis history. Results can also be exported as JSON, CSV, HTML, or Markdown."></p>
+                </div>
+                <div class="tag-row"><span>SQLite</span><span>JSON</span><span>CSV</span><span>HTML</span><span>MD</span></div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="analysis" class="section-padding section-surface">
+      <div class="container-xl">
+        <div class="section-heading reveal">
+          <span class="section-kicker" data-de="Analysebereiche" data-en="Analysis Areas">Analysebereiche</span>
+          <h4 data-de="Mehrere Blickwinkel auf dieselbe Python Codebasis"
+              data-en="Multiple perspectives on the same Python codebase">Mehrere Blickwinkel auf dieselbe Python Codebasis</h4>
+          <p data-de="Die einzelnen Bereiche bauen auf derselben statischen AST Analyse auf und stellen Struktur, Beziehungen, Metriken und technische Auffälligkeiten getrennt dar."
+             data-en="The individual areas build on the same static AST analysis and present structure, relationships, metrics, and technical anomalies separately."></p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-xl-6 reveal"><article class="analysis-card"><div class="analysis-icon"><i class="bi bi-braces-asterisk"></i></div><div><h3 data-de="Projekt und Symbolanalyse" data-en="Project and Symbol Analysis">Projekt und Symbolanalyse</h3><p data-de="Erfasst Python Dateien, Klassen, Funktionen, Methoden, asynchrone Symbole, Parameter, Decorators und Quellcodepositionen." data-en="Captures Python files, classes, functions, methods, asynchronous symbols, parameters, decorators, and source positions."></p></div></article></div>
+          <div class="col-xl-6 reveal"><article class="analysis-card"><div class="analysis-icon"><i class="bi bi-boxes"></i></div><div><h3 data-de="Abhängigkeiten" data-en="Dependencies">Abhängigkeiten</h3><p data-de="Imports werden als Standardbibliothek, projektintern oder Drittanbieter klassifiziert und nach Verwendung und Datei aufgeschlüsselt." data-en="Imports are classified as Standard Library, internal, or Third Party and broken down by usage and file."></p></div></article></div>
+          <div class="col-xl-6 reveal"><article class="analysis-card"><div class="analysis-icon"><i class="bi bi-bezier2"></i></div><div><h3 data-de="Funktionsaufrufe" data-en="Function Calls">Funktionsaufrufe</h3><p data-de="Direkte Aufrufbeziehungen zeigen aufrufendes Symbol, aufgerufenes Ziel, Datei und Codezeile." data-en="Direct call relationships show the caller symbol, called target, file, and source line."></p></div></article></div>
+          <div class="col-xl-6 reveal"><article class="analysis-card"><div class="analysis-icon"><i class="bi bi-bar-chart-line"></i></div><div><h3 data-de="Komplexität und Statistik" data-en="Complexity and Statistics">Komplexität und Statistik</h3><p data-de="AST basierte Komplexitätswerte werden mit Mittelwert, Median, Perzentil, Standardabweichung, Maximum und Z Scores ausgewertet." data-en="AST based complexity values are evaluated using mean, median, percentile, standard deviation, maximum, and Z Scores."></p></div></article></div>
+          <div class="col-xl-6 reveal"><article class="analysis-card"><div class="analysis-icon"><i class="bi bi-exclamation-diamond"></i></div><div><h3 data-de="Risk Pattern Analyse" data-en="Risk Pattern Analysis">Risk Pattern Analyse</h3><p data-de="Ausgewählte Konstruktionen wie dynamische Codeausführung, Subprocess Aufrufe, deaktivierte TLS Prüfung oder mögliche fest hinterlegte Secrets werden markiert." data-en="Selected constructs such as dynamic code execution, subprocess calls, disabled TLS verification, or possible hardcoded secrets are flagged."></p></div></article></div>
+          <div class="col-xl-6 reveal"><article class="analysis-card"><div class="analysis-icon"><i class="bi bi-cpu"></i></div><div><h3 data-de="Bytecode Inspektion" data-en="Bytecode Inspection">Bytecode Inspektion</h3><p data-de="Python Quellcode wird zu Codeobjekten kompiliert und mit dis rekursiv disassembliert, ohne das Zielprojekt auszuführen." data-en="Python source code is compiled into code objects and recursively disassembled with dis without executing the target project."></p></div></article></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats-band">
+      <div class="container-xl">
+        <div class="row g-4 text-center">
+          <div class="col-6 col-lg-3 reveal"><div class="stat-value" data-counter="8">0</div><div class="stat-label" data-de="Arbeitsbereiche" data-en="Workspaces">Arbeitsbereiche</div></div>
+          <div class="col-6 col-lg-3 reveal"><div class="stat-value" data-counter="4">0</div><div class="stat-label" data-de="Exportformate" data-en="Export Formats">Exportformate</div></div>
+          <div class="col-6 col-lg-3 reveal"><div class="stat-value" data-counter="3">0</div><div class="stat-label" data-de="Abhängigkeitsklassen" data-en="Dependency Classes">Abhängigkeitsklassen</div></div>
+          <div class="col-6 col-lg-3 reveal"><div class="stat-value gradient-text">DE / EN</div><div class="stat-label" data-de="Sprachen" data-en="Languages">Sprachen</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="architecture" class="section-padding">
+      <div class="container-xl">
+        <div class="section-heading reveal">
+          <span class="section-kicker" data-de="Architektur" data-en="Architecture">Architektur</span>
+          <h4 data-de="Modular aufgebaut und klar getrennt"
+              data-en="Modular structure with clear separation">Modular aufgebaut und klar getrennt</h4>
+          <p data-de="Analyse, Datenmodelle, Datenbank, Export, Lokalisierung und Benutzeroberfläche liegen in getrennten Modulen. Dadurch bleibt die Codebasis nachvollziehbar und erweiterbar."
+             data-en="Analysis, data models, database, export, localization, and user interface are separated into dedicated modules, keeping the codebase traceable and extensible."></p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-lg-4 reveal"><article class="profile-card"><div class="profile-number">01</div><i class="bi bi-folder2-open profile-icon"></i><h3 data-de="Projekt erfassen" data-en="Discover Project">Projekt erfassen</h3><p data-de="Python Dateien werden rekursiv gesucht, typische Build, Cache und virtuelle Umgebungen werden ausgeschlossen." data-en="Python files are discovered recursively while common build, cache, and virtual environment directories are excluded."></p><ul><li data-de=".py und .pyw" data-en=".py and .pyw">.py und .pyw</li><li data-de="Projektinterne Pfade" data-en="Internal project paths">Projektinterne Pfade</li><li data-de="Syntaxfehler protokollieren" data-en="Record syntax errors">Syntaxfehler protokollieren</li></ul></article></div>
+          <div class="col-lg-4 reveal delay-1"><article class="profile-card featured"><div class="profile-ribbon" data-de="Kern" data-en="Core">Kern</div><div class="profile-number">02</div><i class="bi bi-diagram-2 profile-icon"></i><h3 data-de="AST analysieren" data-en="Analyze AST">AST analysieren</h3><p data-de="Der Abstract Syntax Tree liefert Symbole, Imports, Aufrufe, Komplexität und ausgewählte statische Risikomuster." data-en="The Abstract Syntax Tree provides symbols, imports, calls, complexity, and selected static risk patterns."></p><ul><li>ast.parse()</li><li>NodeVisitor</li><li data-de="Keine Modulimporte" data-en="No target module imports">Keine Modulimporte</li></ul></article></div>
+          <div class="col-lg-4 reveal delay-2"><article class="profile-card"><div class="profile-number">03</div><i class="bi bi-layout-text-window-reverse profile-icon"></i><h3 data-de="Ergebnisse darstellen" data-en="Present Results">Ergebnisse darstellen</h3><p data-de="Die PySide6 Oberfläche verbindet Dashboard, Explorer, Tabellen, Bytecode, Verlauf und Export in einer Anwendung." data-en="The PySide6 interface combines dashboard, explorer, tables, bytecode, history, and export in one application."></p><ul><li>PySide6</li><li>SQLite</li><li>JSON · CSV · HTML · MD</li></ul></article></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="technology" class="section-padding section-surface">
+      <div class="container-xl">
+        <div class="row g-5 align-items-center">
+          <div class="col-lg-6 reveal">
+            <div class="section-heading mb-0">
+              <span class="section-kicker" data-de="Technologie" data-en="Technology">Technologie</span>
+              <h4 data-de="Python Desktop Stack"
+                  data-en="Python desktop stack">Python Desktop Stack</h4>
+              <p data-de="BPREI nutzt Python für die Analyseengine, PySide6 für die Oberfläche, NumPy und SciPy für Metriken sowie SQLite für den lokalen Verlauf."
+                 data-en="BPREI uses Python for the analysis engine, PySide6 for the interface, NumPy and SciPy for metrics, and SQLite for local history."></p>
+            </div>
+
+            <div class="tech-cloud mt-4">
+              <span><i class="bi bi-filetype-py"></i> Python 3.10+</span>
+              <span>PySide6</span><span>AST</span><span>NumPy</span><span>SciPy</span>
+              <span>SQLite</span><span>dis</span><span>JSON</span><span>CSV</span><span>HTML</span><span>Markdown</span><span>PyInstaller</span>
+            </div>
+          </div>
+
+          <div class="col-lg-6 reveal delay-1">
+            <div class="code-card">
+              <div class="code-head"><span><i class="bi bi-terminal me-2"></i>project-architecture</span><span>1.0.0</span></div>
+              <pre><code><span class="code-root">BylickiLabs_Python_Reverse_Engineering_Inspector/</span>
+├── .github			  
+├── website
+├── src
+├── main.py
+├── requirements.txt
+├── start.bat
+├── build.bat
+├── README.md
+├── LICENSE
+└── <span class="code-folder">src/</span>
+    ├── config.py
+    ├── localization.py
+    ├── models.py
+    ├── <span class="code-folder">analyzers/</span>
+    │   ├── project_analyzer.py
+    │   └── bytecode_analyzer.py
+    ├── <span class="code-folder">services/</span>
+    │   ├── database.py
+    │   └── exporter.py
+    └── <span class="code-folder">ui/</span>
+        └── main_window.py</code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="artwork-section section-padding">
+      <div class="container-xl">
+        <div class="artwork-card reveal">
+          <img src="assets/bprei.png" alt="BPREI Projektgrafik">
+          <div class="artwork-overlay">
+            <span class="section-kicker">BPREI</span>
+            <h2 data-de="Struktur sichtbar machen" data-en="Make structure visible">Struktur sichtbar machen</h2>
+            <p data-de="Eine Anwendung für die technische Betrachtung von Python Code aus mehreren Perspektiven."
+               data-en="An application for technical inspection of Python code from multiple perspectives."></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="download" class="section-padding section-surface">
+      <div class="container-xl">
+        <article class="download-card reveal">
+          <div class="row align-items-center g-4">
+            <div class="col-lg-8">
+              <span class="section-kicker" data-de="Projektzugang" data-en="Project Access">Projektzugang</span>
+              <h4 data-de="Aktuellen Quellcode als vollständiges Paket herunterladen"
+                  data-en="Download the current source code as a complete package">Aktuellen Quellcode als vollständiges Paket herunterladen</h4>
+              <p data-de="Das Paket enthält die Python Anwendung, alle internen Module, requirements.txt sowie die Windows Skripte für Testumgebung und PyInstaller Build."
+                 data-en="The package contains the Python application, all internal modules, requirements.txt, and the Windows scripts for the test environment and PyInstaller build."></p>
+              <div class="download-details mt-4">
+                <span><i class="bi bi-check-circle-fill"></i> Version 1.0.0</span>
+                <span><i class="bi bi-check-circle-fill"></i> Python Source</span>
+                <span><i class="bi bi-check-circle-fill"></i> DE / EN</span>
+                <span title="2b3a26b46420098584c8e430a60d4d44d889fc7d461cc99a4d154c9780937db7"><i class="bi bi-fingerprint"></i> SHA256 2b3a26b46420…</span>
+              </div>
+            </div>
+            <div class="col-lg-4">
+              <div class="d-grid gap-3">
+                <a class="btn btn-light btn-lg" href="https://github.com/bylickilabs" target="_blank" rel="noopener noreferrer"><i class="bi bi-github me-2"></i><span data-de="GitHub Profil" data-en="GitHub Profile">GitHub Profil</span></a>
+                <a class="btn btn-primary btn-lg" href="https://github.com/bylickilabs/BylickiLabs_Python_Reverse_Engineering_Inspector/archive/refs/heads/main.zip" download><i class="bi bi-download me-2"></i><span data-de="Quellcode Paket" data-en="Source Package">Quellcode Paket</span></a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <div class="legal-card reveal mt-4">
+          <div class="legal-icon"><i class="bi bi-shield-check"></i></div>
+          <div>
+            <h3 data-de="Statische Analyse ohne Ausführung des Zielprojekts"
+                data-en="Static analysis without executing the target project">Statische Analyse ohne Ausführung des Zielprojekts</h3>
+            <p class="mb-0" data-de="BPREI importiert oder startet die untersuchte Python Anwendung nicht. Die strukturelle Analyse basiert auf dem Python AST. Die Bytecode Ansicht erzeugt Codeobjekte zur Disassemblierung, ohne diese auszuführen."
+               data-en="BPREI does not import or launch the inspected Python application. Structural analysis is based on the Python AST. The Bytecode view creates code objects for disassembly without executing them."></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="fixed-footer">
+    <div class="container-xl">
+      <div class="footer-inner">
+        <span>© <span id="year"></span> Thorsten Bylicki · BYLICKILABS</span>
+        <span class="footer-separator">•</span>
+        <span>Python Reverse Engineering Inspector 1.0.0</span>
+        <a href="https://github.com/bylickilabs" target="_blank" rel="noopener noreferrer">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <button id="backTop" class="back-top" type="button" aria-label="Nach oben"><i class="bi bi-arrow-up"></i></button>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

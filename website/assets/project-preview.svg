@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="820" viewBox="0 0 1280 820" role="img" aria-labelledby="title desc">
+  <title id="title">BPREI Desktop Interface Preview</title>
+  <desc id="desc">Dark desktop application mockup with dashboard cards, project explorer and analysis tables.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#09111d"/><stop offset="1" stop-color="#040913"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#3776ab"/><stop offset=".62" stop-color="#22d3ee"/><stop offset="1" stop-color="#ffd343"/>
+    </linearGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="9" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <rect width="1280" height="820" rx="22" fill="url(#bg)"/>
+  <rect x="1" y="1" width="1278" height="818" rx="21" fill="none" stroke="#26384c"/>
+  <rect x="0" y="0" width="1280" height="86" rx="22" fill="#0d1724"/>
+  <rect x="0" y="64" width="1280" height="22" fill="#0d1724"/>
+  <circle cx="38" cy="34" r="7" fill="#fb7185"/><circle cx="62" cy="34" r="7" fill="#fbbf24"/><circle cx="86" cy="34" r="7" fill="#4ade80"/>
+  <text x="118" y="41" fill="#f4f8fc" font-size="24" font-weight="700" font-family="Segoe UI,Arial">BylickiLabs Python Reverse Engineering Inspector</text>
+  <text x="118" y="63" fill="#7690a8" font-size="12" font-family="Segoe UI,Arial">BPREI · 1.0.0</text>
+  <g font-family="Segoe UI,Arial" font-size="13" fill="#b8c7d7">
+    <text x="24" y="116" fill="#67b7e7">Dashboard</text><text x="116" y="116">Project Explorer</text><text x="244" y="116">Dependencies</text><text x="347" y="116">Calls</text><text x="398" y="116">Complexity</text><text x="477" y="116">Risks</text><text x="527" y="116">Bytecode</text><text x="602" y="116">History</text>
+  </g>
+  <rect x="24" y="130" width="64" height="2" rx="1" fill="#22d3ee"/>
+
+  <g transform="translate(24 157)">
+    <g>
+      <rect width="218" height="112" rx="16" fill="#101c2a" stroke="#24384b"/>
+      <text x="18" y="30" fill="#7e93a8" font-size="12" font-family="Segoe UI,Arial">PYTHON FILES</text>
+      <text x="18" y="78" fill="#fff" font-size="38" font-weight="700" font-family="Segoe UI,Arial">42</text>
+    </g>
+    <g transform="translate(232)"><rect width="218" height="112" rx="16" fill="#101c2a" stroke="#24384b"/><text x="18" y="30" fill="#7e93a8" font-size="12" font-family="Segoe UI,Arial">FUNCTIONS + METHODS</text><text x="18" y="78" fill="#fff" font-size="38" font-weight="700" font-family="Segoe UI,Arial">186</text></g>
+    <g transform="translate(464)"><rect width="218" height="112" rx="16" fill="#101c2a" stroke="#24384b"/><text x="18" y="30" fill="#7e93a8" font-size="12" font-family="Segoe UI,Arial">DEPENDENCIES</text><text x="18" y="78" fill="#fff" font-size="38" font-weight="700" font-family="Segoe UI,Arial">27</text></g>
+    <g transform="translate(696)"><rect width="218" height="112" rx="16" fill="#101c2a" stroke="#24384b"/><text x="18" y="30" fill="#7e93a8" font-size="12" font-family="Segoe UI,Arial">RISK FINDINGS</text><text x="18" y="78" fill="#ffd343" font-size="38" font-weight="700" font-family="Segoe UI,Arial">8</text></g>
+    <g transform="translate(928)"><rect width="218" height="112" rx="16" fill="#101c2a" stroke="#24384b"/><text x="18" y="30" fill="#7e93a8" font-size="12" font-family="Segoe UI,Arial">AVG COMPLEXITY</text><text x="18" y="78" fill="#67b7e7" font-size="38" font-weight="700" font-family="Segoe UI,Arial">4.82</text></g>
+  </g>
+
+  <g transform="translate(24 292)">
+    <rect width="350" height="474" rx="18" fill="#0c1622" stroke="#24384b"/>
+    <text x="20" y="35" fill="#f2f7fb" font-size="17" font-weight="700" font-family="Segoe UI,Arial">Project Structure</text>
+    <g font-family="Consolas,monospace" font-size="14" fill="#b5c6d7">
+      <text x="22" y="73" fill="#67b7e7">▾ BPREI/</text><text x="42" y="101">▾ src/</text><text x="62" y="129">▾ analyzers/</text><text x="82" y="157" fill="#e5edf5">project_analyzer.py</text><text x="82" y="185" fill="#e5edf5">bytecode_analyzer.py</text><text x="62" y="213">▾ services/</text><text x="82" y="241" fill="#e5edf5">database.py</text><text x="82" y="269" fill="#e5edf5">exporter.py</text><text x="62" y="297">▾ ui/</text><text x="82" y="325" fill="#e5edf5">main_window.py</text><text x="62" y="353" fill="#e5edf5">models.py</text><text x="62" y="381" fill="#e5edf5">localization.py</text>
+    </g>
+    <rect x="18" y="414" width="314" height="42" rx="10" fill="#111f2e" stroke="#2b4961"/>
+    <circle cx="38" cy="435" r="5" fill="#22d3ee" filter="url(#glow)"/>
+    <text x="54" y="440" fill="#8fa6bb" font-size="12" font-family="Segoe UI,Arial">Static project inspection</text>
+  </g>
+
+  <g transform="translate(396 292)">
+    <rect width="860" height="474" rx="18" fill="#0c1622" stroke="#24384b"/>
+    <text x="20" y="35" fill="#f2f7fb" font-size="17" font-weight="700" font-family="Segoe UI,Arial">Statistical Anomalies</text>
+    <rect x="18" y="55" width="824" height="44" rx="9" fill="#111f2e"/>
+    <g font-family="Segoe UI,Arial" font-size="12" fill="#7f95a9"><text x="34" y="82">SYMBOL</text><text x="312" y="82">FILE</text><text x="555" y="82">LINE</text><text x="640" y="82">COMPLEXITY</text><text x="758" y="82">Z SCORE</text></g>
+    <g font-family="Consolas,monospace" font-size="13" fill="#c8d6e4">
+      <text x="34" y="132">ProjectAnalyzer.analyze</text><text x="312" y="132">project_analyzer.py</text><text x="570" y="132">157</text><text x="681" y="132">18</text><text x="778" y="132" fill="#ffd343">2.71</text>
+      <line x1="20" y1="151" x2="840" y2="151" stroke="#1e3042"/>
+      <text x="34" y="186">FileVisitor.visit_Call</text><text x="312" y="186">project_analyzer.py</text><text x="570" y="186">111</text><text x="681" y="186">14</text><text x="778" y="186" fill="#67b7e7">2.18</text>
+      <line x1="20" y1="205" x2="840" y2="205" stroke="#1e3042"/>
+      <text x="34" y="240">MainWindow._populate_all</text><text x="312" y="240">main_window.py</text><text x="570" y="240">818</text><text x="681" y="240">11</text><text x="778" y="240">1.84</text>
+    </g>
+    <text x="20" y="300" fill="#f2f7fb" font-size="17" font-weight="700" font-family="Segoe UI,Arial">Analysis Pipeline</text>
+    <g transform="translate(24 328)" font-family="Segoe UI,Arial" font-size="12" font-weight="700">
+      <rect width="142" height="52" rx="13" fill="#10253a" stroke="#3776ab"/><text x="32" y="31" fill="#dceefa">SOURCE</text>
+      <path d="M150 26h54" stroke="#22d3ee" stroke-width="2"/><path d="M198 20l9 6-9 6" fill="none" stroke="#22d3ee" stroke-width="2"/>
+      <rect x="214" width="142" height="52" rx="13" fill="#10253a" stroke="#3776ab"/><text x="261" y="31" fill="#dceefa">AST</text>
+      <path d="M364 26h54" stroke="#22d3ee" stroke-width="2"/><path d="M412 20l9 6-9 6" fill="none" stroke="#22d3ee" stroke-width="2"/>
+      <rect x="428" width="142" height="52" rx="13" fill="#10253a" stroke="#3776ab"/><text x="458" y="31" fill="#dceefa">METRICS</text>
+      <path d="M578 26h54" stroke="#ffd343" stroke-width="2"/><path d="M626 20l9 6-9 6" fill="none" stroke="#ffd343" stroke-width="2"/>
+      <rect x="642" width="164" height="52" rx="13" fill="#172331" stroke="#ffd343"/><text x="671" y="31" fill="#fff2a6">INSIGHT</text>
+    </g>
+  </g>
+
+  <rect x="24" y="786" width="1232" height="12" rx="6" fill="#0c1724"/>
+  <rect x="24" y="786" width="925" height="12" rx="6" fill="url(#accent)" opacity=".85"/>
+</svg>
