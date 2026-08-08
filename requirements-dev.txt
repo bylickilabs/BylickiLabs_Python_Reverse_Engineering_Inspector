@@ -1,0 +1,11 @@
+# Build and packaging
+PyInstaller>=6.11
+build>=1.2.2
+
+# Testing
+pytest>=8.3
+pytest-cov>=6.0
+
+# Code quality
+ruff>=0.9
+mypy>=1.14

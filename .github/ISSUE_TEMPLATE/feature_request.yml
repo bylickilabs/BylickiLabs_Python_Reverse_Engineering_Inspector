@@ -1,0 +1,74 @@
+name: "Feature Request"
+description: "Suggest an improvement for BPREI"
+title: "[FEATURE] "
+labels:
+  - enhancement
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Describe the proposal, its technical benefit, and the desired behavior.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: "Problem"
+      description: "What problem or missing use case should be addressed?"
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: "Proposed Feature"
+      description: "How should the new feature work?"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: "Area"
+      options:
+        - "Project Analysis"
+        - "Dependencies"
+        - "Function Calls"
+        - "Complexity"
+        - "Risk Analysis"
+        - "Bytecode"
+        - "SQLite History"
+        - "Export"
+        - "Localization"
+        - "User Interface"
+        - "Build / Packaging"
+        - "Documentation"
+        - "Other"
+    validations:
+      required: true
+
+  - type: textarea
+    id: technical_details
+    attributes:
+      label: "Technical Details"
+      description: "Optional: architecture idea, API, data model, AST approach, or other technical notes."
+    validations:
+      required: false
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: "Alternatives"
+      description: "Which alternative solutions were considered?"
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: architecture
+    attributes:
+      label: "Architecture"
+      options:
+        - label: "The proposal respects BPREI's static analysis model and does not require execution of analyzed target code."
+          required: true
+        - label: "I checked whether a similar request already exists."
+          required: true
