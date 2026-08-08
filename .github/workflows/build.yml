@@ -1,0 +1,89 @@
+name: Windows Build
+
+on:
+  push:
+    branches:
+      - main
+    tags:
+      - "v*"
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: windows-build-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Build BPREI
+    runs-on: windows-latest
+
+    env:
+      PYTHONUTF8: "1"
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: |
+            requirements.txt
+            requirements-dev.txt
+            pyproject.toml
+
+      - name: Upgrade pip
+        run: python -m pip install --upgrade pip
+
+      - name: Install runtime dependencies
+        run: python -m pip install -r requirements.txt
+
+      - name: Install development dependencies
+        run: python -m pip install -r requirements-dev.txt
+
+      - name: Validate Python source
+        run: python -m compileall -q main.py src
+
+      - name: Build with BPREI.spec
+        run: python -m PyInstaller --noconfirm --clean BPREI.spec
+
+      - name: Verify executable
+        shell: pwsh
+        run: |
+          $ExePath = "dist\BylickiLabs-Python-Reverse-Engineering-Inspector\BylickiLabs-Python-Reverse-Engineering-Inspector.exe"
+
+          if (-not (Test-Path -LiteralPath $ExePath -PathType Leaf)) {
+              throw "Expected executable was not created: $ExePath"
+          }
+
+          $File = Get-Item -LiteralPath $ExePath
+          Write-Host "Executable: $($File.FullName)"
+          Write-Host "Size: $([math]::Round($File.Length / 1MB, 2)) MB"
+
+      - name: Create SHA256 checksum
+        shell: pwsh
+        run: |
+          $DistPath = "dist\BylickiLabs-Python-Reverse-Engineering-Inspector"
+          $ExePath = Join-Path $DistPath "BylickiLabs-Python-Reverse-Engineering-Inspector.exe"
+          $ChecksumPath = Join-Path $DistPath "SHA256SUMS.txt"
+
+          $Hash = Get-FileHash -LiteralPath $ExePath -Algorithm SHA256
+          "$($Hash.Hash)  $($Hash.Path | Split-Path -Leaf)" | Set-Content -LiteralPath $ChecksumPath -Encoding UTF8
+
+          Get-Content -LiteralPath $ChecksumPath
+
+      - name: Upload Windows build
+        uses: actions/upload-artifact@v7
+        with:
+          name: BPREI-Windows-${{ github.sha }}
+          path: dist/BylickiLabs-Python-Reverse-Engineering-Inspector/
+          if-no-files-found: error
+          retention-days: 14

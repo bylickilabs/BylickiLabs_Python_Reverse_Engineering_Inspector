@@ -1,0 +1,114 @@
+name: "Bug Report"
+description: "Report a reproducible problem in BPREI"
+title: "[BUG] "
+labels:
+  - bug
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for reporting a bug. Please provide as much relevant technical information as possible.
+
+  - type: input
+    id: version
+    attributes:
+      label: "BPREI Version"
+      description: "Which BPREI version is affected?"
+      placeholder: "1.0.0"
+    validations:
+      required: true
+
+  - type: input
+    id: operating_system
+    attributes:
+      label: "Operating System"
+      description: "Windows version and architecture"
+      placeholder: "Windows 11 64 bit"
+    validations:
+      required: true
+
+  - type: input
+    id: python_version
+    attributes:
+      label: "Python Version"
+      description: "Only required if BPREI is running from source"
+      placeholder: "Python 3.12.x"
+    validations:
+      required: false
+
+  - type: textarea
+    id: description
+    attributes:
+      label: "Description"
+      description: "What happened?"
+      placeholder: "Describe the problem as precisely as possible."
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: "Steps to Reproduce"
+      description: "Which steps reliably reproduce the issue?"
+      placeholder: |
+        1. Start BPREI
+        2. ...
+        3. ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: "Expected Behavior"
+      description: "What should happen?"
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: "Actual Behavior"
+      description: "What happens instead?"
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: "Logs and Error Messages"
+      description: "Remove passwords, tokens, secrets, and personal data before submitting."
+      render: shell
+    validations:
+      required: false
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: "Affected Area"
+      options:
+        - "Project Analysis"
+        - "Dependencies"
+        - "Function Calls"
+        - "Complexity"
+        - "Risk Analysis"
+        - "Bytecode"
+        - "SQLite History"
+        - "Export"
+        - "Localization"
+        - "User Interface"
+        - "Build / Packaging"
+        - "Other"
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: "Confirmation"
+      options:
+        - label: "I checked whether a similar issue already exists."
+          required: true
+        - label: "I did not include credentials, tokens, or secrets."
+          required: true
