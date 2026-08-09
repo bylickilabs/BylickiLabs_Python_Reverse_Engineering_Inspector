@@ -7,6 +7,8 @@
 ![212284100-561aa473-3905-4a80-b561-0d28506553ee](https://github.com/user-attachments/assets/4e210bed-3f4a-47a4-9d13-46eec04c4020)
 
 > [!IMPORTANT]
+> |[![Windows Build](https://github.com/bylickilabs/BylickiLabs_Python_Reverse_Engineering_Inspector/actions/workflows/build.yml/badge.svg)](https://github.com/bylickilabs/BylickiLabs_Python_Reverse_Engineering_Inspector/actions/workflows/build.yml)|
+> |---|
 > **Direct Download - Windows Build**
 >
 > The current Windows version of the **Python Reverse Engineering Inspector** is available as a GitHub Actions artifact for direct download.
