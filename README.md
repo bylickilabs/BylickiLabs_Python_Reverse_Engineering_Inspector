@@ -1,6 +1,19 @@
 | [![BPREI](https://github.com/bylickilabs/BylickiLabs_Python_Reverse_Engineering_Inspector/actions/workflows/deploy-pages.yml/badge.svg)](https://github.com/bylickilabs/BylickiLabs_Python_Reverse_Engineering_Inspector/actions/workflows/deploy-pages.yml) | [![Windows Build](https://github.com/bylickilabs/BylickiLabs_Python_Reverse_Engineering_Inspector/actions/workflows/build.yml/badge.svg)](https://github.com/bylickilabs/BylickiLabs_Python_Reverse_Engineering_Inspector/actions/workflows/build.yml) | [![Python 3.10](https://github.com/bylickilabs/BylickiLabs_Python_Reverse_Engineering_Inspector/actions/workflows/test-python-310.yml/badge.svg)](https://github.com/bylickilabs/BylickiLabs_Python_Reverse_Engineering_Inspector/actions/workflows/test-python-310.yml) | [![Python 3.11](https://github.com/bylickilabs/BylickiLabs_Python_Reverse_Engineering_Inspector/actions/workflows/test-python-311.yml/badge.svg)](https://github.com/bylickilabs/BylickiLabs_Python_Reverse_Engineering_Inspector/actions/workflows/test-python-311.yml) | [![Python 3.12](https://github.com/bylickilabs/BylickiLabs_Python_Reverse_Engineering_Inspector/actions/workflows/test-python-312.yml/badge.svg)](https://github.com/bylickilabs/BylickiLabs_Python_Reverse_Engineering_Inspector/actions/workflows/test-python-312.yml) |
 |---|---|---|---|---|
 
+![212284100-561aa473-3905-4a80-b561-0d28506553ee](https://github.com/user-attachments/assets/4e210bed-3f4a-47a4-9d13-46eec04c4020)
+
+> [!IMPORTANT]
+> **Direct Download - Windows Build**
+>
+> The current Windows version of the **Python Reverse Engineering Inspector** is available as a GitHub Actions artifact for direct download.
+>
+> **[Download .exe](https://github.com/bylickilabs/BylickiLabs_Python_Reverse_Engineering_Inspector/actions/runs/31265117105/artifacts/9023941771)**
+>
+> This build is only available for a limited time.
+
+![212284100-561aa473-3905-4a80-b561-0d28506553ee](https://github.com/user-attachments/assets/4e210bed-3f4a-47a4-9d13-46eec04c4020)
+
 <a id="top"></a>
 
 ### BylickiLabs Python Reverse Engineering Inspector
