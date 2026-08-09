@@ -13,6 +13,8 @@ on:
 
 permissions:
   contents: read
+  id-token: write
+  attestations: write
 
 concurrency:
   group: windows-build-${{ github.workflow }}-${{ github.ref }}
@@ -67,6 +69,12 @@ jobs:
           $File = Get-Item -LiteralPath $ExePath
           Write-Host "Executable: $($File.FullName)"
           Write-Host "Size: $([math]::Round($File.Length / 1MB, 2)) MB"
+
+      - name: Generate artifact attestation
+        if: github.event_name != 'pull_request'
+        uses: actions/attest@v4
+        with:
+          subject-path: dist/BylickiLabs-Python-Reverse-Engineering-Inspector/BylickiLabs-Python-Reverse-Engineering-Inspector.exe
 
       - name: Create SHA256 checksum
         shell: pwsh
