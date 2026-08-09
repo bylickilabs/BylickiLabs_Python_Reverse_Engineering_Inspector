@@ -263,33 +263,75 @@
             </div>
           </div>
 
-          <div class="col-lg-6 reveal delay-1">
-            <div class="code-card">
-              <div class="code-head"><span><i class="bi bi-terminal me-2"></i>project-architecture</span><span>1.0.0</span></div>
-              <pre><code><span class="code-root">BylickiLabs_Python_Reverse_Engineering_Inspector/</span>
-├── .github			  
-├── website
-├── src
-├── main.py
-├── requirements.txt
-├── start.bat
-├── build.bat
-├── README.md
+<div class="col-lg-6 reveal delay-1">
+  <div class="code-card">
+    <div class="code-head">
+      <span>
+        <i class="bi bi-terminal me-2"></i>project-architecture
+      </span>
+      <span>1.0.0</span>
+    </div>
+
+    <pre><code><span class="code-root">BylickiLabs_Python_Reverse_Engineering_Inspector/</span>
+│
+├── <span class="code-folder">.github/</span>
+│   ├── FUNDING.yml
+│   ├── <span class="code-folder">ISSUE_TEMPLATE/</span>
+│   │   ├── bug_report.yml
+│   │   └── feature_request.yml
+│   ├── PULL_REQUEST_TEMPLATE.md
+│   └── <span class="code-folder">workflows/</span>
+│       ├── build.yml
+│       ├── deploy-pages.yml
+│       ├── test-python-310.yml
+│       ├── test-python-311.yml
+│       └── test-python-312.yml
+│
+├── <span class="code-folder">website/</span>
+│   ├── <span class="code-folder">assets/</span>
+│   │   ├── bprei.png
+│   │   ├── favicon.svg
+│   │   └── project-preview.svg
+│   ├── index.html
+│   ├── script.js
+│   └── style.css
+│
+├── <span class="code-folder">src/</span>
+│   ├── __init__.py
+│   ├── config.py
+│   ├── localization.py
+│   ├── models.py
+│   │
+│   ├── <span class="code-folder">analyzers/</span>
+│   │   ├── __init__.py
+│   │   ├── bytecode_analyzer.py
+│   │   └── project_analyzer.py
+│   │
+│   ├── <span class="code-folder">services/</span>
+│   │   ├── __init__.py
+│   │   ├── database.py
+│   │   └── exporter.py
+│   │
+│   └── <span class="code-folder">ui/</span>
+│       ├── __init__.py
+│       └── main_window.py
+│
+├── .gitignore
+├── BPREI.spec
+├── CHANGELOG.md
+├── CODE_SIGNING_POLICY.md
+├── CONTRIBUTING.md
 ├── LICENSE
-└── <span class="code-folder">src/</span>
-    ├── config.py
-    ├── localization.py
-    ├── models.py
-    ├── <span class="code-folder">analyzers/</span>
-    │   ├── project_analyzer.py
-    │   └── bytecode_analyzer.py
-    ├── <span class="code-folder">services/</span>
-    │   ├── database.py
-    │   └── exporter.py
-    └── <span class="code-folder">ui/</span>
-        └── main_window.py</code></pre>
-            </div>
-          </div>
+├── README.md
+├── SECURITY.md
+├── build.bat
+├── main.py
+├── pyproject.toml
+├── requirements-dev.txt
+├── requirements.txt
+└── start.bat</code></pre>
+  </div>
+</div>
         </div>
       </div>
     </section>
